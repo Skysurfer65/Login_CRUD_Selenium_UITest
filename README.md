@@ -11,12 +11,13 @@ to expand tests to numerous of web browsers. Login_CRUD has been developed for M
 
 # Instructions
 **Run main function and watch the spectacle.** I've slowed down the interaction with Thread.sleep()
-just to be able to follow events. These could be removed.
+just to be able to follow events. These could be removed. After completion a logfile could
+be followed by reading output in the console.
 
 Make sure to set paths to your local msedgedriver.exe and chromedriver.exe, these has to be downloaded
 from Microsoft and google.
 
 Also make sure to have correct path to Login_CRUD, **index.html**
 
-You could run it in any IDE with support for Java and the important files are **Login_CRUD_Selenium_Test.java**
+You could run it in any IDE with support for Java 16 and the important files are **Login_CRUD_Selenium_Test.java**
 and the **pom.xml**

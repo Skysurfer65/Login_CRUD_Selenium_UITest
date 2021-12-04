@@ -36,6 +36,7 @@ public class Login_CRUD_Selenium_Test {
         driverEdge.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         //Get URL (local html file)
         driverEdge.get("C:\\Users\\Bax Musik\\Desktop\\Coders\\alg_övningar\\Login_CRUD\\src\\html\\index.html");
+        //If running in localhost
         //driverEdge.get("http://127.0.0.1:5500//Login_CRUD//src//html//index.html");
         return driverEdge;
     }
