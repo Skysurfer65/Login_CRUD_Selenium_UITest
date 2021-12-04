@@ -7,6 +7,13 @@ using:
 - ChromeDriver
  
 Passing a WebDriver as a parameter into different function makes it possible
-to expand tests to numerous of web browsers.
-Login_CRUD has been developed for Microsoft Edge.
+to expand tests to numerous of web browsers. Login_CRUD has been developed for Microsoft Edge.
 
+# Instructions
+**Run main function and watch the spectacle.** I've slowed down the interaction with Thread.sleep()
+just to be able to follow events. These could be removed.
+
+Make sure to set paths to your local msedgedriver.exe and chromedriver.exe, these has to be downloaded
+from Microsoft and google.
+
+Also make sure to have correct path to Login_CRUD, **index.html**
