@@ -1,6 +1,5 @@
 # Login Selenium UI Test
 Selenium automation of html/javascript login app. The login app is called "Login_CRUD".
-
 This Selenium automation is written in **Java Maven** with IntelliJ IDEA
 using:
 - EdgeDriver
