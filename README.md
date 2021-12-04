@@ -17,3 +17,6 @@ Make sure to set paths to your local msedgedriver.exe and chromedriver.exe, thes
 from Microsoft and google.
 
 Also make sure to have correct path to Login_CRUD, **index.html**
+
+You could run it in any IDE with support for Java and the important files are **Login_CRUD_Selenium_Test.java**
+and the **pom.xml**
