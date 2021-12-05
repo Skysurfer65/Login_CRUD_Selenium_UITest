@@ -1,0 +1,224 @@
+Exception while creating account with User ID: Bax and Password: 2aX#
+
+Create account test passed and users array have the following objects:
+**********************************************************************
+[
+ {
+  "userID": "bax1",
+  "password": "Bax1#",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "admin",
+  "password": "Bax3%",
+  "admin": "YES",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "spaces1",
+  "password": "40bAx?",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "Åäö20",
+  "password": "20Åäö&",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "longUserID01234567890123456789",
+  "password": "LongPass##012345",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ }
+]Exception while login with User ID: Bax and Password: 2aX#
+
+Login with 6 user ID's and valid passwords success
+**************************************************
+
+Create account test passed, user ID errors
+******************************************
+User ID tested with user in use, to short, no number, 
+special character and empty. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                  ERROR                             
+ Prerequisites:                                                     
+ User ID has to be unique and consist of minimum 4 characters, max 30.
+ Only letters  and numbers and at least one of each, user ID is not 
+ case sensitive, no empty spaces are allowed.                       
+                                                                    
+ Password has to have a minimum of 4 characters and consist of at   
+ least one letter, one number and one special character. Passwords  
+ are case sensitive and need to consist of both upper and lower     
+ case letters. Maximum 16 characters.                               
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Create account test passed, password errors
+*******************************************
+Password tested with to short, to long, no capital letter, no number 
+and empty space in password. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                  ERROR                             
+ Prerequisites:                                                     
+ User ID has to be unique and consist of minimum 4 characters, max 30.
+ Only letters  and numbers and at least one of each, user ID is not 
+ case sensitive, no empty spaces are allowed.                       
+                                                                    
+ Password has to have a minimum of 4 characters and consist of at   
+ least one letter, one number and one special character. Passwords  
+ are case sensitive and need to consist of both upper and lower     
+ case letters. Maximum 16 characters.                               
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Login test, bad user ID
+***********************
+User ID tested with invalid user ID, to short, no number, no 
+special character and empty space. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                 ERROR                              
+ User ID not in database, check your typing or                      
+ create new account.                                                
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Login test, bad password
+************************
+Password tested with invalid password, to short, to long, no capital letter, 
+no number and empty space in password.. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                 ERROR                              
+ Password not in database, check your typing, you have              
+ three attempts.                                                    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Login test, bad password
+************************
+Same user ID tested three times with invalid password, to short, to long, no capital letter, 
+no number and empty space in password.. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                 ERROR                              
+ User ID not in database, check your typing or                      
+ create new account.                                                
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                WARNING                             
+ You have tried to reach this userID three times with invalid       
+ password, this user Will be deleted. You may create new user.      
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Exception while creating account with User ID: Bax and Password: 2aX#
+
+Create account test passed and users array have the following objects:
+**********************************************************************
+[
+ {
+  "userID": "bax1",
+  "password": "Bax1#",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "admin",
+  "password": "Bax3%",
+  "admin": "YES",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "spaces1",
+  "password": "40bAx?",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "Åäö20",
+  "password": "20Åäö&",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "longUserID01234567890123456789",
+  "password": "LongPass##012345",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ }
+]Exception while login with User ID: Bax and Password: 2aX#
+
+Login with 6 user ID's and valid passwords success
+**************************************************
+
+Create account test passed, user ID errors
+******************************************
+User ID tested with user in use, to short, no number, 
+special character and empty. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                  ERROR                             
+ Prerequisites:                                                     
+ User ID has to be unique and consist of minimum 4 characters, max 30.
+ Only letters  and numbers and at least one of each, user ID is not 
+ case sensitive, no empty spaces are allowed.                       
+                                                                    
+ Password has to have a minimum of 4 characters and consist of at   
+ least one letter, one number and one special character. Passwords  
+ are case sensitive and need to consist of both upper and lower     
+ case letters. Maximum 16 characters.                               
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Create account test passed, password errors
+*******************************************
+Password tested with to short, to long, no capital letter, no number 
+and empty space in password. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                  ERROR                             
+ Prerequisites:                                                     
+ User ID has to be unique and consist of minimum 4 characters, max 30.
+ Only letters  and numbers and at least one of each, user ID is not 
+ case sensitive, no empty spaces are allowed.                       
+                                                                    
+ Password has to have a minimum of 4 characters and consist of at   
+ least one letter, one number and one special character. Passwords  
+ are case sensitive and need to consist of both upper and lower     
+ case letters. Maximum 16 characters.                               
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Login test, bad user ID
+***********************
+User ID tested with invalid user ID, to short, no number, no 
+special character and empty space. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                 ERROR                              
+ User ID not in database, check your typing or                      
+ create new account.                                                
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Login test, bad password
+************************
+Password tested with invalid password, to short, to long, no capital letter, 
+no number and empty space in password.. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                 ERROR                              
+ Password not in database, check your typing, you have              
+ three attempts.                                                    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Login test, bad password
+************************
+Same user ID tested three times with invalid password, to short, to long, no capital letter, 
+no number and empty space in password.. Resulting in the following msg.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                 ERROR                              
+ User ID not in database, check your typing or                      
+ create new account.                                                
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                WARNING                             
+ You have tried to reach this userID three times with invalid       
+ password, this user Will be deleted. You may create new user.      
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+

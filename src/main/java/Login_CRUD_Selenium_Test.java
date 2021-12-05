@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +24,9 @@ public class Login_CRUD_Selenium_Test {
     String[] goodPasswords = new String[]{"Bax1#", "2aX#", "Bax3%", "40bAx?", "20Åäö&", "LongPass##012345"};
     String[] badUsers = new String[]{"", "axl", "richard", "adam1@", "baxen1#", "pat rik", "tooLongID0123456789012345678901"};
     String[] badPasswords = new String[]{"", "P1#", "password1#", "Pass#", " Password1#", "Pass word1#", "TooLongPass#34567"};
+    //Log variables
     String text = "";
+    String logTxt = "";
 
 
     public WebDriver invokeEdge(){
@@ -75,14 +79,17 @@ public class Login_CRUD_Selenium_Test {
         browser.loginUser(driver);
         browser.errorMessages(driver);
         driver.close();
+        //Print out log
+        browser.printOutLog();
     }
 
     public void createUser(WebDriver driver) throws InterruptedException{
+        int i = 0;
         Thread.sleep(1000);
         driver.findElement(By.id("createOrLogin")).click();
         //Create accounts
-        try {
-            for(int i = 0; i < goodUsers.length; i++){
+        for( i = 0; i < goodUsers.length; i++){
+            try {
                 //Set data textfields
                 driver.findElement(By.id("userID")).sendKeys(goodUsers[i]);
                 driver.findElement(By.id("password")).sendKeys(goodPasswords[i]);
@@ -91,9 +98,14 @@ public class Login_CRUD_Selenium_Test {
                 Thread.sleep(100);
                 driver.findElement(By.id("reset")).click();
                 Thread.sleep(100);
+
+            } catch (Exception e) {
+                logTxt += "Exception while creating account with User ID: "+goodUsers[i]
+                        + " and Password: "+goodPasswords[i]+"\n";
+                System.out.print("Exception while creating account with User ID: "+goodUsers[i]
+                + " and Password: "+goodPasswords[i]+"\n");
+                driver.findElement(By.id("reset")).click();
             }
-        } catch (Exception e) {
-            System.out.println("Exception while creating account");
         }
         //Instantiate javascript executor
         jSE = (JavascriptExecutor)driver;
@@ -103,16 +115,18 @@ public class Login_CRUD_Selenium_Test {
         text = "\nCreate account test passed and users array have the following objects:";
         text+= "\n**********************************************************************\n";
         text+= test;
+        logTxt += text;
         System.out.println(text);
         //Object test = jSE.executeScript("alert(GetUsers());");
         //errorMessages(driver);
     }
 
     public void loginUser(WebDriver driver) throws InterruptedException{
+        int i = 0;
         Thread.sleep(500);
         driver.findElement(By.id("createOrLogin")).click();
-        try {
-            for(int i = 0; i < goodUsers.length; i++){
+        for( i = 0; i < goodUsers.length; i++){
+            try {
                 //Set data in textfields
                 driver.findElement(By.id("userID")).sendKeys(goodUsers[i]);
                 driver.findElement(By.id("password")).sendKeys(goodPasswords[i]);
@@ -126,26 +140,33 @@ public class Login_CRUD_Selenium_Test {
                 Thread.sleep(100);
                 driver.findElement(By.id("reset")).click();
                 Thread.sleep(100);
+
+            } catch (Exception e) {
+                logTxt += "Exception while login with User ID: "+goodUsers[i]
+                        + " and Password: "+goodPasswords[i]+"\n";
+                System.out.print("Exception while login with User ID: "+goodUsers[i]
+                        + " and Password: "+goodPasswords[i]+"\n");
+                driver.findElement(By.id("reset")).click();
             }
-        } catch (Exception e) {
-            System.out.println("Exception while login");
         }
         text = "\nLogin with 6 user ID's and valid passwords success";
         text+= "\n**************************************************\n";
+        logTxt += text;
         System.out.println(text);
     }
 
     public void errorMessages(WebDriver driver) throws InterruptedException{
         String errorMsg = "";
         String warningMsg = "";
+        int i = 0;
         Thread.sleep(1000);
 
         //Test "create account" error
         //**************************
         driver.findElement(By.id("createOrLogin")).click();
         //userID invalid
-        try {
-            for(int i = 0; i < badUsers.length; i++){
+        for( i = 0; i < badUsers.length - 1; i++){
+            try {
                 //Set data in textfields
                 driver.findElement(By.id("userID")).sendKeys(badUsers[i]);
                 driver.findElement(By.id("password")).sendKeys(goodPasswords[i]);
@@ -157,19 +178,25 @@ public class Login_CRUD_Selenium_Test {
                 alert.accept();
                 driver.findElement(By.id("reset")).click();
                 Thread.sleep(100);
+
+            } catch (Exception e) {
+                logTxt += "Exception while creating account, User ID: "+badUsers[i]
+                        + " and Password: "+goodPasswords[i]+"\n";
+                System.out.print("Exception while creating account, User ID: "+badUsers[i]
+                + " and Password: "+goodPasswords[i]+"\n");
+                driver.findElement(By.id("reset")).click();
             }
-        } catch (Exception e) {
-            System.out.println("Exception while creating account, user ID");
         }
         text = "\nCreate account test passed, user ID errors";
         text+= "\n******************************************\n";
         text+= "User ID tested with user in use, to short, no number, \n";
-        text+= "special character and empty. Resulting in the following msg.";
-        System.out.println(text +"\n"+ errorMsg);
+        text+= "special character and empty. Resulting in the following msg.\n";
+        logTxt += text + errorMsg +"\n";
+        System.out.print(text + errorMsg +"\n");
 
         //password invalid
-        try {
-            for(int i = 0; i < badPasswords.length; i++){
+        for( i = 0; i < badPasswords.length - 1; i++){
+            try {
                 //Set data in textfields
                 driver.findElement(By.id("userID")).sendKeys(goodUsers[i]);
                 driver.findElement(By.id("password")).sendKeys(badPasswords[i]);
@@ -181,22 +208,28 @@ public class Login_CRUD_Selenium_Test {
                 alert.accept();
                 driver.findElement(By.id("reset")).click();
                 Thread.sleep(100);
+
+            } catch (Exception e) {
+                logTxt += "Exception while creating account, Password: "+badPasswords[i]
+                        + " and User ID: "+goodUsers[i]+"\n";
+                System.out.println("Exception while creating account, Password: "+badPasswords[i]
+                + " and User ID: "+goodUsers[i]+"\n");
+                driver.findElement(By.id("reset")).click();
             }
-        } catch (Exception e) {
-            System.out.println("Exception while creating account, password");
         }
         text = "\nCreate account test passed, password errors";
         text+= "\n*******************************************\n";
         text+= "Password tested with to short, to long, no capital letter, no number \n";
-        text+= "and empty space in password. Resulting in the following msg.";
-        System.out.println(text +"\n"+ errorMsg);
+        text+= "and empty space in password. Resulting in the following msg.\n";
+        logTxt += text + errorMsg+"\n";
+        System.out.println(text + errorMsg+"\n");
 
         //Test login error
         //**************************
         driver.findElement(By.id("createOrLogin")).click();
         //Bad user ID
-        try {
-            for(int i = 0; i < badUsers.length; i++){
+        for( i = 0; i < badUsers.length; i++){
+            try {
                 //Set data in textfields
                 driver.findElement(By.id("userID")).sendKeys(badUsers[i]);
                 driver.findElement(By.id("password")).sendKeys(badPasswords[i]);
@@ -208,19 +241,25 @@ public class Login_CRUD_Selenium_Test {
                 alert.accept();
                 driver.findElement(By.id("reset")).click();
                 Thread.sleep(100);
+
+            } catch (Exception e) {
+                logTxt += "Exception while login, User ID: "+badUsers[i]
+                        + " and Password: "+badPasswords[i]+"\n";
+                System.out.print("Exception while login, User ID "+badUsers[i]
+                + " and Password "+badPasswords[i]+"\n");
+                driver.findElement(By.id("reset")).click();
             }
-        } catch (Exception e) {
-            System.out.println("Exception while login, user ID");
         }
         text = "\nLogin test, bad user ID";
         text+= "\n***********************\n";
         text+= "User ID tested with invalid user ID, to short, no number, no \n";
-        text+= "special character and empty space. Resulting in the following msg.";
-        System.out.println(text +"\n"+ errorMsg);
+        text+= "special character and empty space. Resulting in the following msg.\n";
+        logTxt += text + errorMsg+"\n";
+        System.out.println(text + errorMsg+"\n");
 
         //Bad password
-        try {
-            for(int i = 0; i < goodUsers.length - 1; i++){
+        for( i = 0; i < goodUsers.length - 1; i++){
+            try {
                 //Set data in textfields
                 driver.findElement(By.id("userID")).sendKeys(goodUsers[i]);
                 driver.findElement(By.id("password")).sendKeys(badPasswords[i]);
@@ -232,19 +271,25 @@ public class Login_CRUD_Selenium_Test {
                 alert.accept();
                 driver.findElement(By.id("reset")).click();
                 Thread.sleep(100);
+
+            } catch (Exception e) {
+                logTxt += "Exception while login, Password: "+badPasswords[i]
+                        + " and User ID: "+goodUsers[i]+"\n";
+                System.out.print("Exception while login, Password: "+badPasswords[i]
+                + " and User ID: "+goodUsers[i]+"\n");
+                driver.findElement(By.id("reset")).click();
             }
-        } catch (Exception e) {
-            System.out.println("Exception while login, password");
         }
         text = "\nLogin test, bad password";
         text+= "\n************************\n";
         text+= "Password tested with invalid password, to short, to long, no capital letter, \n";
-        text+= "no number and empty space in password.. Resulting in the following msg.";
-        System.out.println(text +"\n"+ errorMsg);
+        text+= "no number and empty space in password.. Resulting in the following msg.\n";
+        logTxt += text + errorMsg+"\n";
+        System.out.println(text + errorMsg+"\n");
 
         //Bad password, three attempts on good userID
-        try {
-            for(int i = 0; i < 3 ; i++){
+        for(i = 0; i < 3 ; i++){
+            try {
                 //Set data in textfields
                 driver.findElement(By.id("userID")).sendKeys(goodUsers[0]);
                 driver.findElement(By.id("password")).sendKeys(badPasswords[i]);
@@ -260,14 +305,31 @@ public class Login_CRUD_Selenium_Test {
                 alert.accept();
                 driver.findElement(By.id("reset")).click();
                 Thread.sleep(100);
+
+            } catch (Exception e) {
+                logTxt += "Exception while login, three times wrong password, user ID: "+goodUsers[0]
+                        + " and Password: "+badPasswords[i]+"\n";
+                System.out.print("Exception while login, three times wrong password, user ID: "+goodUsers[0]
+                + " and Password: "+badPasswords[i]+"\n");
+                driver.findElement(By.id("reset")).click();
             }
-        } catch (Exception e) {
-            System.out.println("Exception while login, three times wrong password");
         }
         text = "\nLogin test, bad password";
         text+= "\n************************\n";
         text+= "Same user ID tested three times with invalid password, to short, to long, no capital letter, \n";
-        text+= "no number and empty space in password.. Resulting in the following msg.";
-        System.out.println(text +"\n"+ warningMsg +"\n"+ errorMsg);
+        text+= "no number and empty space in password.. Resulting in the following msg.\n";
+        logTxt += text + warningMsg +"\n"+ errorMsg+"\n";
+        System.out.print(text + warningMsg +"\n"+ errorMsg+"\n");
+    }
+    public void printOutLog() {
+        try {
+            FileWriter myWriter = new FileWriter("./logTxt/testLog.txt");
+            myWriter.write(logTxt);
+            myWriter.close();
+            System.out.println("Successfully wrote to the logfile in folder \"logTxt\".");
+        } catch (IOException e) {
+            System.out.println("An error occurred during file write");
+            e.printStackTrace();
+        }
     }
 }
