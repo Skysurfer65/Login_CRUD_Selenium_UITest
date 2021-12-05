@@ -1,4 +1,3 @@
-Exception while creating account with User ID: Bax and Password: 2aX#
 
 Create account test passed and users array have the following objects:
 **********************************************************************
@@ -6,6 +5,12 @@ Create account test passed and users array have the following objects:
  {
   "userID": "bax1",
   "password": "Bax1#",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "Bax2",
+  "password": "2aX#",
   "admin": "NO",
   "nrOfAttempts": 0
  },
@@ -33,8 +38,7 @@ Create account test passed and users array have the following objects:
   "admin": "NO",
   "nrOfAttempts": 0
  }
-]Exception while login with User ID: Bax and Password: 2aX#
-
+]
 Login with 6 user ID's and valid passwords success
 **************************************************
 
@@ -110,7 +114,6 @@ no number and empty space in password.. Resulting in the following msg.
  password, this user Will be deleted. You may create new user.      
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-Exception while creating account with User ID: Bax and Password: 2aX#
 
 Create account test passed and users array have the following objects:
 **********************************************************************
@@ -118,6 +121,12 @@ Create account test passed and users array have the following objects:
  {
   "userID": "bax1",
   "password": "Bax1#",
+  "admin": "NO",
+  "nrOfAttempts": 0
+ },
+ {
+  "userID": "Bax2",
+  "password": "2aX#",
   "admin": "NO",
   "nrOfAttempts": 0
  },
@@ -145,8 +154,7 @@ Create account test passed and users array have the following objects:
   "admin": "NO",
   "nrOfAttempts": 0
  }
-]Exception while login with User ID: Bax and Password: 2aX#
-
+]
 Login with 6 user ID's and valid passwords success
 **************************************************
 

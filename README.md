@@ -11,7 +11,7 @@ to expand tests to numerous of web browsers. Login_CRUD has been developed for M
 # Instructions
 **Run main function and watch the spectacle.** I've slowed down the interaction with Thread.sleep()
 just to be able to follow events. These could be removed. After completion a logfile could
-be followed by reading output in the console.
+be followed by reading output in the console or .txt file in folder "logTxt".
 
 Make sure to set paths to your local msedgedriver.exe and chromedriver.exe, these has to be downloaded
 from Microsoft and google.
