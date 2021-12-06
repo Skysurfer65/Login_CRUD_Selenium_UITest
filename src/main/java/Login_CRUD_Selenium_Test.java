@@ -149,7 +149,7 @@ public class Login_CRUD_Selenium_Test {
                 driver.findElement(By.id("reset")).click();
             }
         }
-        text = "\nLogin with 6 user ID's and valid passwords success";
+        text = "\nLogin with "+goodUsers.length+" user ID's and valid passwords success";
         text+= "\n**************************************************\n";
         logTxt += text;
         System.out.println(text);
