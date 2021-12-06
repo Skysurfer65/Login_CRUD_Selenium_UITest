@@ -20,3 +20,7 @@ Also make sure to have correct path to Login_CRUD, **index.html**
 
 You could run it in any IDE with support for Java 16 and the important files are **Login_CRUD_Selenium_Test.java**
 and the **pom.xml**
+
+# Author
+Richard Fehling, student at EC Utbildning, MVT21<br/>
+richard.fehling@learnet.se

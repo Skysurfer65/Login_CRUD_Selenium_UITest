@@ -4,12 +4,19 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
+/**
+ ******************************************************
+ * Login program with JSON Database
+ * @author Richard Fehling, MVT21 EC Utbildning
+ * @file Pseudo database from getUsers via js Executor
+ *****************************************************
+ */
 
 public class Login_CRUD_Selenium_Test {
     //Initiate driver variables
