@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-
+    # Windows build
     runs-on: windows-latest
 
     steps:
@@ -33,7 +33,7 @@ jobs:
       run: mvn -B package --file pom.xml
     
   test_1:
-
+    # Ubuntu build
     runs-on: ubuntu-latest
 
     steps:
@@ -46,7 +46,7 @@ jobs:
         cache: maven
 
     - name: Selenium Test with Maven
-
+      # Surefire in dependencies
       run: mvn clean test
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive

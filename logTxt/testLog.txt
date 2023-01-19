@@ -1,13 +1,8 @@
+Exception while creating account with User ID: bax1 and Password: Bax1
 
 Create account test passed and users array have the following objects:
 **********************************************************************
 [
- {
-  "userID": "bax1",
-  "password": "Bax1#",
-  "admin": "NO",
-  "nrOfAttempts": 0
- },
  {
   "userID": "Bax2",
   "password": "2aX#",
@@ -38,7 +33,8 @@ Create account test passed and users array have the following objects:
   "admin": "NO",
   "nrOfAttempts": 0
  }
-]
+]Exception while login with User ID: bax1 and Password: Bax1
+
 Login with 6 user ID's and valid passwords success
 **************************************************
 
@@ -109,21 +105,16 @@ no number and empty space in password.. Resulting in the following msg.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                                WARNING                             
- You have tried to reach this userID three times with invalid       
- password, this user Will be deleted. You may create new user.      
+                                 ERROR                              
+ User ID not in database, check your typing or                      
+ create new account.                                                
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+Exception while creating account with User ID: bax1 and Password: Bax1
 
 Create account test passed and users array have the following objects:
 **********************************************************************
 [
- {
-  "userID": "bax1",
-  "password": "Bax1#",
-  "admin": "NO",
-  "nrOfAttempts": 0
- },
  {
   "userID": "Bax2",
   "password": "2aX#",
@@ -154,7 +145,8 @@ Create account test passed and users array have the following objects:
   "admin": "NO",
   "nrOfAttempts": 0
  }
-]
+]Exception while login with User ID: bax1 and Password: Bax1
+
 Login with 6 user ID's and valid passwords success
 **************************************************
 
@@ -225,8 +217,8 @@ no number and empty space in password.. Resulting in the following msg.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                                WARNING                             
- You have tried to reach this userID three times with invalid       
- password, this user Will be deleted. You may create new user.      
+                                 ERROR                              
+ User ID not in database, check your typing or                      
+ create new account.                                                
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
