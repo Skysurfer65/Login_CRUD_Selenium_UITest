@@ -72,7 +72,7 @@ public class Login_CRUD_Selenium_Test {
         Login_CRUD_Selenium_Test browser = new Login_CRUD_Selenium_Test();
         //Invoke Edge
         WebDriver driver = browser.invokeEdge();
-        //Create acoounts
+        //Create acounts
         browser.createUser(driver);
         //Login
         browser.loginUser(driver);
